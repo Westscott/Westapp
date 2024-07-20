@@ -1,12 +1,33 @@
-@font-face {
-    font-family: 'cMyWebFont';
-    src: url('webMain.woff');
-  }
-  
 body {
     background-color: black;
     font-family: 'cMyWebFont';
 }
+
+
+@media only screen and (max-width: 415px) {
+    body {
+        background-color: black;
+        transform: scale(1.5);
+    }
+    [class*="cont-"] {
+        width: 100%;
+    }
+}
+
+
+@font-face {
+    font-family: 'cMyWebFont';
+    src: url('webMain.woff');
+}
+
+
+iframe[seamless] {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
 
 input {
     background-color: rgb(14, 14, 14);
@@ -21,25 +42,22 @@ input {
 }
 
 
-h1 {
-    font-size: xx-large;
-}
-
-.inputContent {
-    
+h1, h2, h3, h4, h5, p, div {
+    color: green;
 }
 
 .textContent {
     color: green;
+    font-size: 17px;
 }
 
 /*----- TOP NAV -----*/
-.topNav {
+.contentHeader {
     background-color: black;
     overflow: hidden;
 }
 /* Style the links inside the navigation bar */
-.topNav a {
+.contentHeader a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -48,12 +66,12 @@ h1 {
     font-size: 17px;
 }
 /* Change the color of links on hover */
-.topNav a:hover {
+.contentHeader a:hover {
     background-color: #ddd;
     color: black;
 }
 /* Add a color to the active/current link */
-.topNav a.active {
+.contentHeader a.active {
     background-color: green;
     color: white;
 }
