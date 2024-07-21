@@ -3,10 +3,56 @@
         <link rel="stylesheet" type="text/css" href="Stylesheets/style.css">
         <script src="Scripts/printer.js"></script>
     </head>
+    
+    <!-- Pass ID's ? how can we get the text to be dynamic with one call? create a var with teh site content?-->
     <body>
-        <h1>Latest Updates</h1>
-        <br>
-        <div id="h_title"></div>
+        <div style="background-color: black; padding: 20px;">
+            <div style="text-align: center;">
+                <h1 id="h_title1"></h1>
+            </div>
+            <div>
+                <p id="h_text1" class="textContent" style="text-align: center;">
+                    <br>
+                    <list>
+                        <li style="display:none;" id="h_li1"></li>
+                        <li style="display:none;" id="h_li2"></li>
+                        <li style="display:none;" id="h_li3"></li>
+                        <li style="display:none;" id="h_li4"></li>
+                        <li style="display:none;" id="h_li5"></li>
+                        <li style="display:none;" id="h_li6"></li>
+                    </list>
+                </p>
+            </div>
+        </div>
+
+        <br/>
+        
+        <div style="background-color: black; padding: 20px;">
+            <div style="text-align: center;">
+                <h1 id="h_title2"></h1>
+            </div>
+            <div>
+                <p id="h_updateText1" class="textContent" style="text-align: center;">
+                    <br>
+                    <list>
+                        <li style="display:none;" id="h_uli1"></li>
+                    </list>
+                </p>
+            </div>
+        </div>
+
+        <br/>
+
+        <div style="background-color: black; padding: 20px;">
+            <div style="text-align: center;">
+                <h1 id="h_title3"></h1>
+            </div>
+            <div>
+                <a href="mailto:mattswest01@gmail.com" id="h_aboutText1" class="textContent">
+                </a>
+            </div>
+        </div>
+
     </body>
 </html>
 

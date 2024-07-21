@@ -5,21 +5,30 @@
         <script src="Modules/Scripts/script.js"></script>
         <title>WestApp</title>
     </head>
-    <body>
-        <div class="contentHeader">
-            <a class='active' id="navHome" href="#", onclick="changeWindow('Modules/mHome.html', 'navHome')">Home</a>
-            <a id="navSoftwareDev" href="#", onclick="changeWindow('Modules/mSoftwareDev.html', 'navSoftwareDev')">Software Development</a>
-            <a id="navGameDev" href="#", onclick="changeWindow('Modules/mGameDev.html', 'navGameDev')">Game Development</a>
-        </div>
-        <hr>
-        <br>
+    <body style="background-color: rgb(8, 8, 8); ">
 
-        <div>
-            <iframe id="contentFrame" src="Modules/mHome.html" seamless></iframe>
+        <div class="contentHeader">
+            <a class='active' id="navHome" href="#", onclick="changeWindowFrame('cFrameHome', 'navHome')">[HOME]</a>
+            <a id="navSoftwareDev" href="#", onclick="changeWindowFrame('cFrameSoftware', 'navSoftwareDev')">[SOFTWARE]</a>
+            <a id="navGameDev" href="#", onclick="changeWindowFrame('cFrameGames', 'navGameDev')">[GAMES]</a>
+            <p id="timeClock"></p>
         </div>
+        <br>
         
-        <div id="contentFooter">
+        <div id="cFrameHome" style="display: none;" class="cFrameHome">
+            <iframe id="contentFrame" class="contentFrame" src="Modules/mHome.html" seamless></iframe>
+        </div>
+
+        <div id="cFrameSoftware" style="display: none;" class="cFrameSoftware">
+            <iframe id="contentFrame" class="contentFrame" src="Modules/mSoftwareDev.html" seamless></iframe>
+        </div>
+
+        <div id="cFrameGames" style="display: none;" class="cFrameGames">
+            <iframe id="contentFrame" class="contentFrame" src="Modules/mGameDev.html" seamless></iframe>
+        </div>
+        <!--        <div id="contentFooter">
             <input id="inputField" type="text"/>
         </div>
+        -->
     </body>
 </html>
