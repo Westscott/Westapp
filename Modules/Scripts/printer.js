@@ -7,7 +7,15 @@ let homeText = [
     "• No Internet needed",
     "• Customizable themes",
     "• Cross Platform (Windows, Mac, Linux)",
-    "Latest Updates",
+    
+    "LATEST UPDATES",
+
+    "HOW TO USE",
+    "Every app is equipped with a command line to interact with & control every aspect of the application.",
+    "You can activate this or quickly navigate to it by pressing ctrl+space",
+    
+    "DOWNLOADS",
+    
     "About / Contact",
     "mattswest01@gmail.com"
 ]
@@ -20,8 +28,16 @@ let homeIds = [
     "h_li4",
     "h_li5",
     "h_li6",
+    
     "h_title2",
+
     "h_title3",
+    "h_howToText1",
+    "h_howToText2",
+    
+    "h_title4",
+
+    "h_title5",
     "h_aboutText1"
 ]
 
@@ -52,7 +68,7 @@ function textTyper() {
         if (charIndex < textToDisplay.length) {
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * 100));
+            setTimeout(typeText, Math.floor(Math.random() * 100)); //100-120
         } else {
             arrIndex++;
             charIndex = 0;

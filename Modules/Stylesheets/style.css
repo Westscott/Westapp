@@ -29,7 +29,7 @@ body {
 
 iframe[seamless] {
     width: 720px;
-    height: 900px;
+    height: 1000px;
     border: none;
 }
 input {
@@ -47,16 +47,17 @@ input {
 h1, h2, h3, h4, h5, p, div, li, ul {
     color: green;
 }
+
 h1 {
     font-family: 'cMyWebFont';
     font-size: 34px;
 }
 
+
 .textContent {
     color: green;
     font-size: 17px;
 }
-
 .textContentTwo {
     color: black;
     font-size: 17px;
@@ -93,11 +94,8 @@ h1 {
     color: white;
 }
 
-
-
 .cFrameHome {
     text-align: center;
-    
 }
 .cFrameSoftware {
     text-align: center;
