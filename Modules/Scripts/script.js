@@ -4,65 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     changeWindowFrame('cFrameHome', 'navHome');
     timeLabel = document.getElementById('timeClock');
     updateDateTime();
-
-    //const inputField = document.getElementById('inputField');
-    
-    /*
-    document.addEventListener('keydown', (event) => {
-        if (event.ctrlKey && event.key == " ") {
-            inputField.focus();
-        }
-    });
-
-    
-    inputField.addEventListener('keydown', (event) => {
-        checkCommandInput(event); 
-    });
-
-    inputField.addEventListener('keydown', (event) => {
-        if (event.key == "Enter") {
-            runCommand();
-        }
-    });*/
-
     setInterval(updateDateTime, 1000);
 });
-
 
 function updateDateTime() {
     const now = new Date();
     const currentDateTime = now.toLocaleString();
     timeLabel.textContent = currentDateTime;
-}
-
-/*
-function runCommand() {
-    const inputFieldValue = document.getElementById('inputField').value;
-    //! CHECK FOR INVALID INPUT
-    //? Create a better setup
-    if (inputFieldValue == "help") {
-        let commandList = 'help\n(ref)resh\ninfo\nexit'
-        alert(`COMMAND LIST\n${commandList}`)
-    }
-    else if (inputFieldValue == "ref" || inputFieldValue == "refresh") {
-        location.reload();
-    }
-    else if (inputFieldValue == "info") {
-        const screenWidth = screen.width;
-        const screenHeight = screen.height;
-        alert(`INFO: ${screenWidth}x${screenHeight}`);
-    }
-    else {
-        alert("invalid messag");
-    }
-
-}
-
-function checkCommandInput(event) {
-    alert("Checking for valid input");
-}
-*/
-
+};
 
 function changeWindowFrame(uID, name) {
 
@@ -83,4 +32,4 @@ function changeWindowFrame(uID, name) {
 
     console.log(uID);
     document.getElementById(uID).style.display = "block";
-}
+};

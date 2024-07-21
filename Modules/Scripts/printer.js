@@ -25,8 +25,7 @@ let homeIds = [
     "h_aboutText1"
 ]
 
-let varArray = new Array;
-
+let varArray = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     for (_value in homeIds) {
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     textTyper()
 });
-
 
 function textTyper() {
     let charIndex = 0;
@@ -65,5 +63,5 @@ function textTyper() {
             }
         }
     }
-    typeText();    
+    typeText();
 };
