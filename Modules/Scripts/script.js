@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //const inputField = document.getElementById('inputField');
     
-
+    /*
     document.addEventListener('keydown', (event) => {
         if (event.ctrlKey && event.key == " ") {
             inputField.focus();
         }
     });
 
-    /*
+    
     inputField.addEventListener('keydown', (event) => {
         checkCommandInput(event); 
     });
@@ -35,7 +35,7 @@ function updateDateTime() {
     timeLabel.textContent = currentDateTime;
 }
 
-
+/*
 function runCommand() {
     const inputFieldValue = document.getElementById('inputField').value;
     //! CHECK FOR INVALID INPUT
@@ -61,7 +61,7 @@ function runCommand() {
 function checkCommandInput(event) {
     alert("Checking for valid input");
 }
-
+*/
 
 
 function changeWindowFrame(uID, name) {
