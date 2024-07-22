@@ -2,6 +2,13 @@
     <head>
         <link rel="stylesheet" type="text/css" href="Stylesheets/style.css">
         <script src="Scripts/printer.js"></script>
+        
+        <script>
+            window.addEventListener('keydown', (event) => {
+                window.parent.postMessage({ type: 'keydown', key: event.key }, '*');
+            })
+        </script>
+    
     </head>
     
     <!-- Pass ID's ? how can we get the text to be dynamic with one call? create a var with teh site content?-->

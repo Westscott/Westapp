@@ -1,3 +1,5 @@
+var globalSpeed = 100;
+
 let homeText = [
     "INFO",
     "Westapp is a site for all the projects made by Matthew Weston. All apps are meant to be an escape from modern bloated software",
@@ -68,7 +70,7 @@ function textTyper() {
         if (charIndex < textToDisplay.length) {
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * 100)); //100-120
+            setTimeout(typeText, Math.floor(Math.random() * globalSpeed)); //100-120
         } else {
             arrIndex++;
             charIndex = 0;

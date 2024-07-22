@@ -29,23 +29,34 @@ body {
 
 iframe[seamless] {
     width: 720px;
-    height: 1000px;
+    height: 1200px;
     border: none;
 }
-input {
-    background-color: rgb(14, 14, 14);
-    font-family: 'cMyWebFont';
-    font-size:17px;
-    color: green;
-    position: absolute;
+
+/*tyle="display: flex; flex-direction: row; justify-content: space-evenly;*/
+.input-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: fixed;
     bottom: 0;
     width: 98%;
-    border: none;
-    border-color: green;
+    box-sizing: border-box;
+}
+.input-bar input {
+    background-color: black;
+    font-family: 'cMyWebFont';
+    color: #008000;
+    width: 100%;
+    padding: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #008000;
     outline: none;
 }
+
 h1, h2, h3, h4, h5, p, div, li, ul {
-    color: green;
+    color: #008000;
 }
 
 h1 {
@@ -55,7 +66,7 @@ h1 {
 
 
 .textContent {
-    color: green;
+    color: #008000;
     font-size: 17px;
 }
 .textContentTwo {
@@ -90,7 +101,7 @@ h1 {
 }
 /* Add a color to the active/current link */
 .contentHeader a.active {
-    background-color: green;
+    background-color: #008000;
     color: white;
 }
 
@@ -102,4 +113,14 @@ h1 {
 }
 .cFrameGames {
     text-align: center;
+}
+
+.keywordOne {
+    color: rgb(235, 235, 38);
+}
+.word2 {
+    color: green;
+}
+.word3 {
+    color: blue;
 }

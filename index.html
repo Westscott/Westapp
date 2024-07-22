@@ -9,6 +9,7 @@
         gtag('js', new Date());
         gtag('config', 'G-ZEQ58Q552N');
         </script>
+        <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="Modules/Stylesheets/style.css">
         <script src="Modules/Scripts/script.js"></script>
         <title>WestApp</title>
@@ -22,17 +23,28 @@
             <p style="padding-right: 10px;" id="timeClock"></p>
         </div>
         <br>
-        
+
         <div id="cFrameHome" style="display: none;" class="cFrameHome">
-            <iframe id="contentFrame" class="contentFrame" src="Modules/mHome.html" seamless></iframe>
+            <iframe id="contentFrameHome" class="contentFrame" src="Modules/mHome.html" seamless></iframe>
         </div>
 
         <div id="cFrameSoftware" style="display: none;" class="cFrameSoftware">
-            <iframe id="contentFrame" class="contentFrame" src="Modules/mSoftwareDev.html" seamless></iframe>
+            <iframe id="contentFrameSoftware" class="contentFrame" src="Modules/mSoftwareDev.html" seamless></iframe>
         </div>
 
         <div id="cFrameGames" style="display: none;" class="cFrameGames">
             <iframe id="contentFrame" class="contentFrame" src="Modules/mGameDev.html" seamless></iframe>
+        </div>
+
+        
+
+        <div class="input-bar">
+            <input style="width: 20%; height: 20px;" id="idUserInputField" type="text" placeholder="/Enter Command Here"></input>
+            
+            <div style="display: flex; align-items: center; width: 80%; height: 30px; background-color: black; border-color: green; border-style: solid; border-width: thin;">
+                <p id="idUserOutputField" style="margin: 0;"></p>
+            </div>
+
         </div>
     </body>
 </html>

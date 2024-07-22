@@ -2,8 +2,12 @@
     <head>
         <link rel="stylesheet" type="text/css" href="Stylesheets/style.css">
         <script src="Scripts/printer.js"></script>
+        <script>
+            window.addEventListener('keydown', (event) => {
+                window.parent.postMessage({ type: 'keydown', key: event.key }, '*');
+            })
+        </script>
     </head>
-
 
     <!--onload="textTyper('h_title', 'Latest Updates')"-->
     <body>
