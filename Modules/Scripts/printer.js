@@ -1,4 +1,4 @@
-var globalSpeed = 100;
+var myVariable = 100;
 
 let homeText = [
     "INFO",
@@ -11,6 +11,13 @@ let homeText = [
     "• Cross Platform (Windows, Mac, Linux)",
     
     "LATEST UPDATES",
+    "Below are the most recent projects added to my software & games list.",
+    "Password Generator",
+    "• Source",
+    "• Download",
+    "Todo List",
+    "• Source",
+    "• Download",
 
     "HOW TO USE",
     "Every app is equipped with a command line to interact with & control every aspect of the application.",
@@ -32,6 +39,13 @@ let homeIds = [
     "h_li6",
     
     "h_title2",
+    "h_featuredSoftwareText1",
+    "h_featuredSoftwareText2",
+    "h_lali1",
+    "h_lali2",
+    "h_featuredSoftwareText3",
+    "h_lali3",
+    "h_lali4",
 
     "h_title3",
     "h_howToText1",
@@ -46,11 +60,22 @@ let homeIds = [
 let varArray = [];
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    //var doc = document.getElementById("contentFrameHome");
+    //var iframeElement = doc.contentWindow.document.getElementById('homeFrameSec1');
+    //console.log("DOC: ", doc);
+    //console.log("ELEMENT: ", iframeElement);
+
     for (_value in homeIds) {
         varArray.push(document.getElementById(`${homeIds[_value]}`));
     }
-    textTyper()
-});
+    //window.parent.postMessage({ myVariable: myVariable }, '*');
+
+    //window.addEventListener('message', function(event) {
+    //    console.log("VAR UPDATED: ", event);
+    //});
+    textTyper();
+}); 
 
 function textTyper() {
     let charIndex = 0;
@@ -60,7 +85,6 @@ function textTyper() {
 
     function typeText() {
         if (textContainer == null) {
-            console.log("NULL");
             textContainer = varArray[0];
             return;
         }
@@ -70,7 +94,7 @@ function textTyper() {
         if (charIndex < textToDisplay.length) {
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * globalSpeed)); //100-120
+            setTimeout(typeText, Math.floor(Math.random() * myVariable)); //100-120
         } else {
             arrIndex++;
             charIndex = 0;

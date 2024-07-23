@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     changeWindowFrame('cFrameHome', 'navHome');
     timeLabel = document.getElementById('timeClock');
     const inputField = document.getElementById('idUserInputField');
+    //const testFrame = document.getElementById('cFrameHome');
     updateDateTime();
 
     window.addEventListener('message', (event) => {
@@ -18,12 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    //testFrame.contentWindow.postMessage({ updateVariable: 10 }, '*');
+
+
     document.addEventListener('keydown', (event) => {
         if (event.ctrlKey && event.key == " ") {
             inputField.focus();
         }
     });
-
     inputField.addEventListener('keydown', (event) => {
         if (event.key == "Enter") {
             checkUserInput();
@@ -37,6 +40,7 @@ function updateDateTime() {
     const now = new Date();
     const currentDateTime = now.toLocaleString();
     timeLabel.textContent = currentDateTime;
+    
 };
 
 
@@ -121,7 +125,7 @@ function textTyper(textToDisplay, textContainer) {
             //textContainer.innerHTML += textToDisplay.charAt(charIndex);
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * 30)); //100-120
+            setTimeout(typeText, Math.floor(Math.random() * 15)); //100-120
             
         } else {
             charIndex = 0;
