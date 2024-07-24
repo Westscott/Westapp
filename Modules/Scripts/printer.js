@@ -1,4 +1,4 @@
-var myVariable = 100;
+var myVariable = 75;
 
 let homeText = [
     "INFO",
@@ -13,7 +13,8 @@ let homeText = [
     "LATEST UPDATES",
     "Below are the most recent projects added to my software & games list.",
     "Password Generator",
-    "• Source",
+    "•",
+    "Source",
     "• Download",
     "Todo List",
     "• Source",
@@ -22,6 +23,15 @@ let homeText = [
     "HOW TO USE",
     "Every app is equipped with a command line to interact with & control every aspect of the application.",
     "You can activate this or quickly navigate to it by pressing ctrl+space",
+    "Here is a list of some default commands that should work in any app.",
+    
+    "•",
+    "help",
+    "- list all available commands",
+    
+    "•",
+    "info",
+    "- get information on pc & current application",
     
     "DOWNLOADS",
     
@@ -41,7 +51,8 @@ let homeIds = [
     "h_title2",
     "h_featuredSoftwareText1",
     "h_featuredSoftwareText2",
-    "h_lali1",
+    "h_lali1-0",
+    "h_lali1-1",
     "h_lali2",
     "h_featuredSoftwareText3",
     "h_lali3",
@@ -50,6 +61,14 @@ let homeIds = [
     "h_title3",
     "h_howToText1",
     "h_howToText2",
+    "h_howToText3",
+    "h_htli1-0",
+    "h_htli1-1",
+    "h_htli1-2",
+
+    "h_htli2-0",
+    "h_htli2-1",
+    "h_htli2-2",
     
     "h_title4",
 
@@ -65,6 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
     //var iframeElement = doc.contentWindow.document.getElementById('homeFrameSec1');
     //console.log("DOC: ", doc);
     //console.log("ELEMENT: ", iframeElement);
+
+    window.addEventListener('keydown', (event) => {
+        if (event.key == "Escape") {
+            myVariable = 0;
+        }
+    });
 
     for (_value in homeIds) {
         varArray.push(document.getElementById(`${homeIds[_value]}`));

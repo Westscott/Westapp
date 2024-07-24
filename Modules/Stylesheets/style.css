@@ -28,7 +28,7 @@ body {
 
 iframe[seamless] {
     width: 720px;
-    height: 1200px;
+    height: 1500px;
     border: none;
 }
 
@@ -55,7 +55,11 @@ iframe[seamless] {
     outline: none;
 }
 
-h1, h2, h3, h4, h5, p, div, li, ul {
+h1 {
+    color: yellow;
+}
+
+h2, h3, h4, h5, p, div, li, ul {
     color: #0a9e0a;
 }
 
@@ -116,7 +120,7 @@ h1 {
 }
 
 .keywordOne {
-    color: rgb(235, 235, 38);
+    color: orange
 }
 .word2 {
     color: green;

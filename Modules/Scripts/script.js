@@ -2,12 +2,15 @@ let timeLabel = "";
 let lastKey = "";
 
 let isTyping = false;
+let override = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     changeWindowFrame('cFrameHome', 'navHome');
     timeLabel = document.getElementById('timeClock');
     const inputField = document.getElementById('idUserInputField');
+    
     //const testFrame = document.getElementById('cFrameHome');
+    
     updateDateTime();
 
     window.addEventListener('message', (event) => {
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //testFrame.contentWindow.postMessage({ updateVariable: 10 }, '*');
 
 
-    document.addEventListener('keydown', (event) => {
+    window.addEventListener('keydown', (event) => {
         if (event.ctrlKey && event.key == " ") {
             inputField.focus();
         }
@@ -40,7 +43,7 @@ function updateDateTime() {
     const now = new Date();
     const currentDateTime = now.toLocaleString();
     timeLabel.textContent = currentDateTime;
-    
+
 };
 
 
@@ -114,14 +117,19 @@ function setOutputText(outputText, valid, type=0) {
 }
 
 function textTyper(textToDisplay, textContainer) {
+    
     textContainer.textContent = "";
     let charIndex = 0;
 
+    if (isTyping == true) {
+        override = 1;
+    }
 
     //! Create a method to stop text overriteng when changing tabs fast, etc
     function typeText() {
+
         if (charIndex < textToDisplay.length) {
-            
+
             //textContainer.innerHTML += textToDisplay.charAt(charIndex);
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
@@ -129,9 +137,12 @@ function textTyper(textToDisplay, textContainer) {
             
         } else {
             charIndex = 0;
-            colorOutputText(textContainer.textContent);
+            colorOutputText(textToDisplay);
+            isTyping = false;
         }
     }
+
+    isTyping = true;
     typeText();
 };
 
