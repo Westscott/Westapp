@@ -85,6 +85,7 @@ let homeIds = [
 ]
 
 let varArray = [];
+let bypassPrint = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -96,6 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('keydown', (event) => {
         if (event.key == "Escape") {
             myVariable = 0;
+            bypassPrint = 1;
+            textLoader();
         }
     });
 
@@ -107,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //window.addEventListener('message', function(event) {
     //    console.log("VAR UPDATED: ", event);
     //});
+    
+    //? how can we skip this if needed
     textTyper();
 }); 
 
@@ -117,26 +122,43 @@ function textTyper() {
     let textContainer = varArray[arrIndex];
 
     function typeText() {
-        if (textContainer == null) {
-            textContainer = varArray[0];
-            return;
-        }
-        if (charIndex == 0) {
-            textContainer.style.display = 'block';
-        }
-        if (charIndex < textToDisplay.length) {
-            textContainer.textContent += textToDisplay.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * myVariable)); //100-120
-        } else {
-            arrIndex++;
-            charIndex = 0;
-            if (arrIndex < varArray.length) {
-                textToDisplay = homeText[arrIndex];
-                textContainer = varArray[arrIndex];
-                typeText();
+        if (bypassPrint == 0) {
+            if (textContainer == null) {
+                textContainer = varArray[0];
+                return;
+            }
+            if (charIndex == 0) {
+                textContainer.style.display = 'block';
+            }
+            if (charIndex < textToDisplay.length) {
+                textContainer.textContent += textToDisplay.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, Math.floor(Math.random() * myVariable)); //100-120
+            } else {
+                arrIndex++;
+                charIndex = 0;
+                if (arrIndex < varArray.length) {
+                    textToDisplay = homeText[arrIndex];
+                    textContainer = varArray[arrIndex];
+                    typeText();
+                }
             }
         }
     }
     typeText();
 };
+
+function textLoader() {
+    let textToDisplay = homeText[0];
+    let textContainer = varArray[0];
+
+    for (let x = 0; x < homeText.length; x++) {
+        textToDisplay = homeText[x];
+        textContainer = varArray[x];
+        
+        textContainer.style.display = 'block';
+        textContainer.textContent = textToDisplay;
+    }
+
+
+}

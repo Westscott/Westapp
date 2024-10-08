@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Word Color</title>
+  <style>
+    .word1 {
+      color: red;
+    }
+    .word2 {
+      color: green;
+    }
+    .word3 {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p id="myText">This is a TEST</p>
+
+  <script>
+    // Get the text element
+    var textElement = document.getElementById("myText");
+
+    // Split the text into an array of words
+    var words = textElement.textContent.split(" ");
+
+    // Create a new HTML string with wrapped words
+    var newHTML = "";
+    for (var i = 0; i < words.length; i++) {
+      newHTML += "<span class='word" + (i+1) + "'>" + words[i] + "</span> ";
+    }
+
+    // Update the text element with the new HTML
+    textElement.innerHTML = newHTML;
+  </script>
+</body>
+</html>

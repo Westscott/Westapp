@@ -12,39 +12,137 @@
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="Modules/Stylesheets/style.css">
         <script src="Modules/Scripts/script.js"></script>
+        <!--
+        <script src="Modules/Scripts/printer.js"></script>
+        -->
         <title>WestApp</title>
     </head>
-    <body style="background-color: rgb(8, 8, 8); ">
 
+    <body style="background-color: rgb(8, 8, 8);">
         <div class="contentHeader">
-            <a class='active' id="navHome" href="#", onclick="changeWindowFrame('cFrameHome', 'navHome')">[HOME]</a>
-            <a id="navSoftwareDev" href="#", onclick="changeWindowFrame('cFrameSoftware', 'navSoftwareDev')">[SOFTWARE]</a>
-            <a id="navGameDev" href="#", onclick="changeWindowFrame('cFrameGames', 'navGameDev')">[GAMES]</a>
+            <a class='active' id="navHome" href="index.html", onclick="changeWindow('navHome')">[HOME]</a>
+            <!--<a id="navSoftwareDev" href="mSoftwareDev.html", onclick="changeWindow('navSoftwareDev')">[SOFTWARE]</a>
+            <a id="navGameDev" href="mGameDev.html", onclick="changeWindow('navGameDev')">[GAMES]</a>-->
             <p style="padding-right: 10px;" id="timeClock"></p>
         </div>
         <br>
-
-        <div id="cFrameHome" class="cFrameHome">
-            <iframe allow="cross-origin-isolated" id="contentFrameHome" class="contentFrame" src="Modules/mHome.html" seamless></iframe>
-        </div>
-
-        <div id="cFrameSoftware" style="display: none;" class="cFrameSoftware">
-            <iframe id="contentFrameSoftware" class="contentFrame" src="Modules/mSoftwareDev.html" seamless></iframe>
-        </div>
-
-        <div id="cFrameGames" style="display: none;" class="cFrameGames">
-            <iframe id="contentFrame" class="contentFrame" src="Modules/mGameDev.html" seamless></iframe>
-        </div>
-
         
-
-        <div class="input-bar">
-            <input style="width: 20%; height: 20px;" id="idUserInputField" type="text" placeholder="/Enter Command Here"></input>
+            <div style="background-color: black; padding: 20px; width: 45%; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h1 id="h_title1">INFO</h1>
+                </div>
+                <div>
+                    <p id="h_text1" class="textContent" style="text-align: center;">
+                        Westapp is a site for all the projects made by Matthew Weston. All apps are meant to be an escape from modern bloated software
+                        <br>
+                        <list>
+                            <li id="h_li1" class="textContent">Lightweight</li>
+                            <li id="h_li2" class="textContent">User Friendly</li>
+                            <li id="h_li3" class="textContent">Customizable</li>
+                            <li id="h_li4" class="textContent">Simple by Design</li>
+                            <li id="h_li5" class="textContent">Open Source</li>
+                        </list>
+                    </p>
+                </div>
+            </div>
             
+            <br/>
+            
+            <div style="background-color: black; padding: 20px; width: 45%; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h1>LATEST UPDATES</h1>
+                </div>
+                <div>
+                    <p class="textContent" style="text-align: center;"></p>
+                    <!-- Apply grid layout to stack horizontally-->
+                    <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 0px;">
+                    
+                        <div style="width: 200px; text-align: center;">
+
+                            <h3 style="margin-bottom: 0px;">PASSWORD GENERATION</h3>
+                            
+                            <div style="height: 30px; display: flex; flex-direction: row; justify-content:center; margin-top: 0px; margin-bottom: 0px;">
+                                <p class="textContent" style="display: flex; margin-right: 5px;">•</p>
+                                <a href="Software/PassGen.zip"><p class="textContent" style="margin-right: 5px; color: cyan;">DOWNLOAD</p></a>
+                            </div>
+                            
+                            <div style="height: 30px; display: flex; flex-direction: row; justify-content: center; margin-top:0px; margin-bottom:0px;">
+                                <p class="textContent" style="display: flex; margin-right: 5px;">•</p>
+                                <a href="https://github.com/Westscott/Westapp"><p class="textContent" style="color: cyan;">SOURCE</p></a>
+                            </div>
+                        </div>
+                        
+                        <div style="width: 200px; text-align: center;">
+                        
+                            <h3 id="h_featuredSoftwareText3" style="margin-bottom: 0px;">ENCRYPTION TOOL</h3>
+                            
+                            <div style="height: 30px; display: flex; flex-direction: row; justify-content:center; margin-top: 0px; margin-bottom: 0px;">
+                                <p id="h_lali3-0" class="textContent" style="display: flex; margin-right: 5px;">•</p>
+                                <a href="Software/_LockJaw.zip"><p id="h_lali3-1" class="textContent" style="margin-right: 5px; color: cyan;">DOWNLOAD</p></a>
+                            </div>
+                            
+                            <div style="height: 30px; display: flex; flex-direction: row; justify-content: center; margin-top:0px; margin-bottom:0px;">
+                                <p id="h_lali4-0" class="textContent" style="display: flex; margin-right: 5px;">•</p>
+                                <a href="https://github.com/Westscott/Westapp"><p id="h_lali4-1" class="textContent" style="color: cyan;">SOURCE</p></a>
+                            </div>
+                        
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <br/>
+            
+            <!--
+            <div style="background-color: black; padding: 20px; width: 45%; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h1 id="h_title3">DOWNLOADS</h1>
+                </div>
+                <div>
+                    <p id="h_howToText1" class="textContent" style="text-align: center;">
+                    </p>
+                    <p id="h_howToText2" class="textContent" style="text-align: center;">
+                    </p>
+                    <p id="h_howToText3" class="textContent" style="text-align: left;">
+                    </p>
+
+                    <div style="display: flex; flex-direction: row; justify-content:left;">
+                        <p id="h_htli1-0" class="textContent" style="display: flex; margin-right: 5px;"></p>
+                        <p id="h_htli1-1" class="textContent" style="display: none; color: orange; margin-right: 5px;"></p>
+                        <p id="h_htli1-2" class="textContent"></p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; justify-content:left;">
+                        <p id="h_htli2-0" class="textContent" style="display: flex; margin-right: 5px;"></p>
+                        <p id="h_htli2-1" class="textContent" style="display: none; color: orange; margin-right: 5px;"></p>
+                        <p id="h_htli2-2" class="textContent"></p>
+                    </div>
+                    
+                    <li id="h_htli2" class="textContent" style="display: none;"></li>
+                </div>
+            </div>
+            <br/>-->
+
+            <div style="background-color: black; padding: 20px; width: 45%; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h1 id="h_title5">CONTACT</h1>
+                </div>
+                <div style="text-align: center;">
+                    <a id="h_aboutText1" class="textContent" href="mailto:mattswest01@gmail.com">
+                    <p>mattswest01@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+
+        <br/>
+        <br/>
+        
+        <!--<div class="input-bar">
+            <input style="width: 20%; height: 20px;" id="idUserInputField" type="text" placeholder="/Enter Command Here"></input>
             <div style="display: flex; align-items: center; width: 80%; height: 30px; background-color: black; border-color: green; border-style: solid; border-width: thin;">
                 <p id="idUserOutputField" style="margin: 0;"></p>
             </div>
-
-        </div>
+        </div>-->
     </body>
 </html>

@@ -13,6 +13,13 @@
     
     <!-- Pass ID's ? how can we get the text to be dynamic with one call? create a var with teh site content?-->
     <body>
+        <div class="contentHeader">
+            <a class='active' id="navHome" href="#", onclick="changeWindow('Modules/mHome.html', 'navHome')">[HOME]</a>
+            <a id="navSoftwareDev" href="#", onclick="changeWindow('cFrameSoftware', 'navSoftwareDev')">[SOFTWARE]</a>
+            <a id="navGameDev" href="#", onclick="changeWindow('cFrameGames', 'navGameDev')">[GAMES]</a>
+            <p style="padding-right: 10px;" id="timeClock"></p>
+        </div>
+
         <div style="background-color: black; padding: 20px;">
             <div style="text-align: center;">
                 <h1 id="h_title1"></h1>
@@ -120,6 +127,11 @@
             <div>
                 <p id="h_downloadsText1" class="textContent" style="text-align: center;">
                 </p>
+				
+				<!-- Call script to change content ( Re work website to be pages not frames )-->
+				<a href="index.html">
+					<button id="h_downloadBtn1"></button>
+				</a>
             </div>
         </div>
 

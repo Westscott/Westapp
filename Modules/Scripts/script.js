@@ -5,7 +5,7 @@ let isTyping = false;
 let override = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
-    changeWindowFrame('cFrameHome', 'navHome');
+    //changeWindowFrame('index/html', 'navHome');
     timeLabel = document.getElementById('timeClock');
     const inputField = document.getElementById('idUserInputField');
     
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //testFrame.contentWindow.postMessage({ updateVariable: 10 }, '*');
-
 
     window.addEventListener('keydown', (event) => {
         if (event.ctrlKey && event.key == " ") {
@@ -47,6 +46,21 @@ function updateDateTime() {
 };
 
 
+
+function changeWindow(name) {
+    var navBtn1 = document.getElementById('navHome');
+    var navBtn2 = document.getElementById('navSoftwareDev');
+    var navBtn3 = document.getElementById('navGameDev');
+    
+    navBtn1.classList.remove("active");
+    navBtn2.classList.remove("active");
+    navBtn3.classList.remove("active");
+
+    var tempElement = document.getElementById(name);
+
+    tempElement.classList.add("active")
+}
+
 function checkUserInput() {
     let _inputValue = document.getElementById('idUserInputField').value;
 
@@ -69,13 +83,16 @@ function checkUserInput() {
         location.reload();
     }
     else if (_inputValue == "1") {
-        changeWindowFrame('cFrameHome', 'navHome');
+        changeWindow('navHome')
     }
     else if (_inputValue == "2") {
-        changeWindowFrame('cFrameSoftware', 'navSoftwareDev');
+        changeWindow('navSoftwareDev')
     }
     else if (_inputValue == "3") {
         changeWindowFrame('cFrameGames', 'navGameDev');
+    }
+    else if (_inputValue == "s") {
+        myVariable = 0;
     }
     else {
         setOutputText(`>> Invalid Command "${_inputValue}" - ( Try 'help' )`, 0);
@@ -84,39 +101,16 @@ function checkUserInput() {
     document.getElementById('idUserInputField').value = '';
 };
 
-// Make this function print out like a term as well
 function setOutputText(outputText, valid, type=0) {
     if (valid == 0)
         document.getElementById("idUserOutputField").style.color = "#D03648";
     else
         document.getElementById("idUserOutputField").style.color = "#008000";
-
     var textElement = document.getElementById("idUserOutputField");
+    textTyperMain(outputText, textElement);
+};
 
-    textTyper(outputText, textElement);
-    /*
-    document.getElementById("idUserOutputField").innerHTML = `${outputText}`;
-    document.getElementById("idUserOutputField").value = `${outputText}`;
-
-    if (type == 1) {
-        var words = outputText.split(" ");
-        outputText = "";
-        const _keywords = ["help", "(1-2)", "info", "ref", "1", "2", "3",];
-        for (var _index=0; _index < words.length; _index++) {
-            if (_keywords.includes(words[_index])) {
-                outputText += "<span class='keywordOne'>"+words[_index]+" </span> ";
-            } else {
-                outputText += `${words[_index]} `;
-            }
-        }
-        textTyper(outputText, textElement);
-        //document.getElementById("idUserOutputField").innerHTML = outputText;
-    } else {
-        textTyper(outputText, textElement);
-    }*/
-}
-
-function textTyper(textToDisplay, textContainer) {
+function textTyperMain(textToDisplay, textContainer) {
     
     textContainer.textContent = "";
     let charIndex = 0;
@@ -125,28 +119,27 @@ function textTyper(textToDisplay, textContainer) {
         override = 1;
     }
 
-    //! Create a method to stop text overriteng when changing tabs fast, etc
-    function typeText() {
+    function typeTextMain() {
 
         if (charIndex < textToDisplay.length) {
 
             //textContainer.innerHTML += textToDisplay.charAt(charIndex);
             textContainer.textContent += textToDisplay.charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, Math.floor(Math.random() * 15)); //100-120
+            setTimeout(typeTextMain, Math.floor(Math.random() * 15)); //100-120
             
         } else {
             charIndex = 0;
-            colorOutputText(textToDisplay);
+            colorOutputTextMain(textToDisplay);
             isTyping = false;
         }
     }
 
     isTyping = true;
-    typeText();
+    typeTextMain();
 };
 
-function colorOutputText(outputText) {
+function colorOutputTextMain(outputText) {
     var wResult = outputText.split(" ");
     outputText = "";
     const _keywords = ["help", "(1-2)", "info", "ref", "1", "2", "3",];
@@ -158,31 +151,8 @@ function colorOutputText(outputText) {
         }
     }
     document.getElementById("idUserOutputField").innerHTML = outputText;    
-}
-
-
-function changeWindowFrame(uID, name) {
-
-    var navBtn1 = document.getElementById('navHome');
-    var navBtn2 = document.getElementById('navSoftwareDev');
-    var navBtn3 = document.getElementById('navGameDev');
-    
-    navBtn1.classList.remove("active");
-    navBtn2.classList.remove("active");
-    navBtn3.classList.remove("active");
-    var tempElement = document.getElementById(name);
-    tempElement.classList.add("active");
-
-    if (name == 'navHome')
-        setOutputText(">> Home page loaded", 1);
-    else if (name == 'navSoftwareDev')
-        setOutputText(">> Software page loaded", 1);
-    else if (name == 'navGameDev')
-        setOutputText(">> Games page loaded", 1);
-
-    document.getElementById("cFrameHome").style.display = "none";
-    document.getElementById("cFrameSoftware").style.display = "none";
-    document.getElementById("cFrameGames").style.display = "none";
-
-    document.getElementById(uID).style.display = "block";
 };
+
+
+
+
