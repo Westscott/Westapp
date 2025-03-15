@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" type="text/css" href="Modules/Stylesheets/style.css">
+    </head>
+
+    <body>
+        <div class="contentHeader">
+            <a id="navHome" href="index.html", onclick="changeWindow('navHome')">[HOME]</a>
+            <a class='active' id="navGameDev" href="mSoftwareDev.html", onclick="changeWindow('navGameDev')">[GAMES]</a>
+            <!--<a id="navGameDev" href="mGameDev.html", onclick="changeWindow('navGameDev')">[GAMES]</a>-->
+            <p style="padding-right: 10px;" id="timeClock"></p>
+        </div>
+        <br>
+        
+        <div style="text-align: center;">
+            <h1>GAMES</h1>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+        
+            <div style="background-color: green; width: 160px;">
+                <center>
+                    <p></p>
+                    <a href="Software/_LockJaw.zip" class="textContentTwo">[PASSWORD GEN]</p>
+                    <a href="https://github.com/Westscott/Westapp" class="textContentTwo">[SOURCE]</a>
+                </center>
+            </div>
+
+            <div style="background-color: green; width: 160px">
+                <center>
+                    <p></p>
+                    <a href="Software/_LockJaw.zip" class="textContentTwo">[TODO LIST]</p>
+                    <a href="https://github.com/Westscott/Westapp" class="textContentTwo">[SOURCE]</a>
+                </center>
+            </div>  
+            
+            <div style="background-color: green; width: 160px">
+                <center>
+                    <p></p>
+                    <a href="Software/_LockJaw.zip" class="textContentTwo">[FILE ENCRYPTION]</p>
+                    <a href="https://github.com/Westscott/Westapp" class="textContentTwo">[SOURCE]</a>
+
+                </center>
+            </div>  
+        </div>
+
+        <div class="input-bar">
+            <input style="width: 20%; height: 20px;" id="idUserInputField" type="text" placeholder="/Enter Command Here"></input>
+            
+            <div style="display: flex; align-items: center; width: 80%; height: 30px; background-color: black; border-color: green; border-style: solid; border-width: thin;">
+                <p id="idUserOutputField" style="margin: 0;"></p>
+            </div>
+        </div>
+    </body>
+</html>
+

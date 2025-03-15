@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEQ58Q552N"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
@@ -9,9 +8,12 @@
         gtag('js', new Date());
         gtag('config', 'G-ZEQ58Q552N');
         </script>
+
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="Modules/Stylesheets/style.css">
+
         <script src="Modules/Scripts/script.js"></script>
+
         <!--
         <script src="Modules/Scripts/printer.js"></script>
         -->
@@ -21,8 +23,9 @@
     <body style="background-color: rgb(8, 8, 8);">
         <div class="contentHeader">
             <a class='active' id="navHome" href="index.html", onclick="changeWindow('navHome')">[HOME]</a>
-            <!--<a id="navSoftwareDev" href="mSoftwareDev.html", onclick="changeWindow('navSoftwareDev')">[SOFTWARE]</a>
-            <a id="navGameDev" href="mGameDev.html", onclick="changeWindow('navGameDev')">[GAMES]</a>-->
+            <a id="navGameDev" href="mGameDev.html", onclick="changeWindow('navGameDev')">[GAMES]</a>
+            <!--<a id="navSoftwareDev" href="mSoftwareDev.html", onclick="changeWindow('navSoftwareDev')">[SOFTWARE]</a>-->
+
             <p style="padding-right: 10px;" id="timeClock"></p>
         </div>
         <br>
@@ -37,8 +40,6 @@
                         <br>
                         <ul>
                             <li id="h_li1" class="textContent">Lightweight</li>
-                            <li id="h_li2" class="textContent">User Friendly</li>
-                            <li id="h_li3" class="textContent">Customizable</li>
                             <li id="h_li4" class="textContent">Simple by Design</li>
                             <li id="h_li5" class="textContent">Open Source</li>
                         </ul>
@@ -130,11 +131,11 @@
             </div>
         <br/>
         
-        <!--<div class="input-bar">
+        <div class="input-bar">
             <input style="width: 20%; height: 20px;" id="idUserInputField" type="text" placeholder="/Enter Command Here"></input>
             <div style="display: flex; align-items: center; width: 80%; height: 30px; background-color: black; border-color: green; border-style: solid; border-width: thin;">
                 <p id="idUserOutputField" style="margin: 0;"></p>
             </div>
-        </div>-->
+        </div>
     </body>
 </html>

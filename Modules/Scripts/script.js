@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //changeWindowFrame('index/html', 'navHome');
     timeLabel = document.getElementById('timeClock');
     const inputField = document.getElementById('idUserInputField');
-    
-    //const testFrame = document.getElementById('cFrameHome');
-    
+
     updateDateTime();
 
     window.addEventListener('message', (event) => {
@@ -21,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             lastKey = event.data.key;
         }
     });
-
-    //testFrame.contentWindow.postMessage({ updateVariable: 10 }, '*');
 
     window.addEventListener('keydown', (event) => {
         if (event.ctrlKey && event.key == " ") {
@@ -42,18 +38,17 @@ function updateDateTime() {
     const now = new Date();
     const currentDateTime = now.toLocaleString();
     timeLabel.textContent = currentDateTime;
-
 };
 
 
 
 function changeWindow(name) {
     var navBtn1 = document.getElementById('navHome');
-    var navBtn2 = document.getElementById('navSoftwareDev');
+    //var navBtn2 = document.getElementById('navSoftwareDev');
     var navBtn3 = document.getElementById('navGameDev');
     
     navBtn1.classList.remove("active");
-    navBtn2.classList.remove("active");
+    //navBtn2.classList.remove("active");
     navBtn3.classList.remove("active");
 
     var tempElement = document.getElementById(name);
@@ -63,7 +58,6 @@ function changeWindow(name) {
 
 function checkUserInput() {
     let _inputValue = document.getElementById('idUserInputField').value;
-
 
     if (_inputValue == "help" || _inputValue == "help 1") {
         setOutputText(">> help (1-2) - list commands | info - basic system information | ref - refresh page | 1 2 3 (nav to specific page)", 1, 1);
@@ -97,7 +91,6 @@ function checkUserInput() {
     else {
         setOutputText(`>> Invalid Command "${_inputValue}" - ( Try 'help' )`, 0);
     }
-
     document.getElementById('idUserInputField').value = '';
 };
 
